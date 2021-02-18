@@ -9,11 +9,10 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <StackLayout>
-        <ListView ItemsSource="{Binding Controls}" ItemTemplate="{StaticResource TemplateSelector}"
+        <CollectionView ItemsSource="{Binding Controls}" 
+                        ItemTemplate="{StaticResource TemplateSelector}"
                                   x:Name="SoapEntries"
-                                  SeparatorVisibility="None"
                                   WidthRequest="550"
-                                  HasUnevenRows="True"
                                   HorizontalOptions="CenterAndExpand"
                                   VerticalOptions="FillAndExpand"/>
     </StackLayout>

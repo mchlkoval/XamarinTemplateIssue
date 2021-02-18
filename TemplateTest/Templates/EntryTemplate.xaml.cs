@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace TemplateTest.Templates
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class EntryTemplate : ViewCell
+    public partial class EntryTemplate : StackLayout
     {
         public EntryTemplate()
         {

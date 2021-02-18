@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace TemplateTest.Templates
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class DateTemplate : ViewCell
+    public partial class DateTemplate : StackLayout
     {
         private ControlsViewModel controlViewModel;
 

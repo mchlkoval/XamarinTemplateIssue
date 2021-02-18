@@ -11,7 +11,7 @@ using Xamarin.Forms.Xaml;
 namespace TemplateTest.Templates
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class TimeTemplate : ViewCell
+    public partial class TimeTemplate : StackLayout
     {
         private ControlsViewModel viewModel;
 
@@ -25,19 +25,13 @@ namespace TemplateTest.Templates
             base.OnBindingContextChanged();
             this.viewModel = BindingContext as ControlsViewModel;
             BindingContext = viewModel;
+
+            if(viewModel != null)
+            {
+                SNTime.PropertyChanged += MyTimePicker_PropertyChanged;
+            }
         }
 
-        protected override void OnDisappearing()
-        {
-            base.OnDisappearing();
-            SNTime.PropertyChanged -= MyTimePicker_PropertyChanged;
-        }
-
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-            SNTime.PropertyChanged += MyTimePicker_PropertyChanged;
-        }
 
         private void MyTimePicker_PropertyChanged(object sender, PropertyChangedEventArgs e) {
 
